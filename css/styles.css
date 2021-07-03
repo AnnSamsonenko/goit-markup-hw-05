@@ -114,6 +114,7 @@ body {
 .head {
   border-bottom: 1px solid var(--head-border-color);
 }
+
 .headline {
   display: flex;
   align-items: center;
@@ -130,6 +131,10 @@ body {
 
 .pagination-item:not(:last-child) {
   margin-right: 50px;
+}
+
+.pagination-item {
+  position: relative;
 }
 
 .logo {
@@ -149,7 +154,8 @@ body {
 }
 
 .head-link {
-  padding-top: 32px;
+  display: block;
+  padding-top: 31px;
   padding-bottom: 32px;
 
   font-weight: 500;
@@ -159,8 +165,20 @@ body {
   color: inherit;
 }
 
-.head-link.current {
+.current {
   color: var(--brand-color);
+}
+
+.current::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+
+  width: 100%;
+  height: 4px;
+  background-color: #2196f3;
+  border-radius: 2px;
 }
 
 .head-link:hover,
@@ -292,6 +310,27 @@ body {
 
 .servises-item:not(:last-child) {
   margin-right: 30px;
+}
+
+.servises-card {
+  position: relative;
+}
+
+.servises-desc {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  padding-top: 28px;
+  padding-bottom: 28px;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  letter-spacing: var(--common-spacing);
+  text-transform: uppercase;
+  color: var(--accent-color);
+  background-color: rgba(47, 48, 58, 0.8);
 }
 
 /*     ===============TEAM=============    */
@@ -461,6 +500,50 @@ body {
 
 .socials-item:not(:last-child) {
   margin-right: 10px;
+}
+
+/*   ===============BACKDROP=============     */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal {
+  position: relative;
+  min-width: 528px;
+  min-height: 581px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: var(--accent-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 /*     ===============PORTFOLIO=============    */
